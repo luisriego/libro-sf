@@ -3,7 +3,13 @@
 {% block title %}Hello ConferenceController!{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <img src="{{ asset('images/under-construction.gif') }}" alt="under construction image">
-</div>
+    <h2>Give your feedback</h2>
+
+    {% for conference in conferences %}
+        <h4>{{ conference }}</h4>
+
+        <p>
+            <a href="{{ path('show_conference', {'id': conference.id}) }}">view</a>
+        </p>
+    {% endfor %}
 {% endblock %}
