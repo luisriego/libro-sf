@@ -18,6 +18,15 @@
 
             <p>{{ comment.text }}</p>
         {% endfor %}
+
+        {% if previous >= 0 %}
+            <a href="{{ path('show_conference', { id: conference.id, offset:previous}) }}">Previous</a>
+        {% endif %}
+
+        {% if next >= 0 %}
+            <a href="{{ path('show_conference', { id: conference.id, offset:next}) }}">Next</a>
+        {% endif %}
+
     {% else %}
         <div>No comments have been posted yet for this conference</div>
     {% endif %}
